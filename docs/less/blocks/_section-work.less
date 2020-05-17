@@ -29,8 +29,13 @@
   width: 74px;
   height: 74px;
   flex-shrink: 0;
-  margin-right: 40px;
-  margin-left: 45px;
+  position: absolute;
+  right: -36px;
+  top: 0;
+
+  &.icon-img-modify {
+    left: -36px;
+  }
 }
 
 .wrap-skills__item {
@@ -40,31 +45,36 @@
   padding-bottom: 90px;
   position: relative;
 
+  &::before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 90px;
+    top: -120px;
+    right: -2px;
+    bottom: 0;
+    background-color: rgb(225, 238, 244);
+  }
+
+  &:nth-of-type(even):before {
+    left: -2px;
+  }
+
   &:nth-child(even) {
     margin-left: auto;
+    padding-left: 70px;
   }
 
   &:nth-child(odd) {
     flex-direction: row-reverse;
     text-align: right;
+    padding-right: 70px;
   }
 }
 
 .item-content {
   position: relative;
   width: 426px;
-  // max-width: 100%;
-
-  &::before {
-    content: "";
-    position: absolute;
-    width: 4px;
-    height: 90px;
-    top: -104px;
-    right: -82px;
-    bottom: 173px;
-    background-color: rgb(225, 238, 244);
-  }
 }
 
 .item-title {

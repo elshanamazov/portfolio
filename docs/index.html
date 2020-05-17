@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Сайт портфолио</title>
     <link
-      href="https://fonts.googleapis.com/css?family=M+PLUS+1p:400,500,700,800&display=swap&subset=cyrillic-ext"
+      href="https://fonts.googleapis.com/css?family=M+PLUS+1p:400,500,700,800,900&display=swap&subset=cyrillic-ext"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/main.css" />
@@ -85,7 +85,7 @@
               Верстальщик сайтов, веб-разработчик.Оперативная верстка. Работаю с
               соблюдением сроков и выполнением ТЗ.
             </p>
-            <a href="#" class="btn-1">Познакомится</a>
+            <a href="#skills" class="btn-1">Познакомится</a>
             <a href="#" class="btn-2">Контакты</a>
           </div>
           <div class="header-content__img">
@@ -96,23 +96,23 @@
       <div class="header-background">
         <img src="./img/header/mountain.png" alt="Горы" />
       </div>
-      <div class="header-skills">
+      <div class="header-skills" id="skills">
         <div class="container">
           <div class="header-skills__wrapper">
             <div class="header_skill">
               <h2 class="skill-title">Что я умею</h2>
               <ul class="skill-list">
                 <li class="list-item">
-                  — pixel perfect, полное соответствие макету.
+                  pixel perfect, полное соответствие макету.
                 </li>
-                <li class="list-item">— верстаю с сеткой или без.</li>
+                <li class="list-item">верстаю с сеткой или без.</li>
                 <li class="list-item">
-                  — адаптивная верстка под мобильные устройства.
+                  адаптивная верстка под мобильные устройства.
                 </li>
-                <li class="list-item">— оптимизация по retina экраны</li>
-                <li class="list-item">— с Bootstrap и без него.</li>
+                <li class="list-item">оптимизация по retina экраны</li>
+                <li class="list-item">с Bootstrap и без него.</li>
               </ul>
-              <a href="#" class="btn-1 btn-modify">Смотреть работы</a>
+              <a href="#portfolio" class="btn-1 btn-modify">Смотреть работы</a>
             </div>
             <div class="header-contacts">
               <h2 class="skill-title">На связи</h2>
@@ -138,7 +138,7 @@
     </header>
 
     <main>
-      <section class="section_portfolio">
+      <section class="section_portfolio" id="portfolio">
         <div class="container">
           <div class="portfolio-content__wrap">
             <h2 class="section-titile">
@@ -148,7 +148,7 @@
               <div class="portfolio_card">
                 <a href="#" class="portfolio_card_img">
                   <img
-                    src="./img/portfolio/forestwrap.jpg"
+                    src="./img/portfolio/forest-preview.jpg"
                     alt="FORESTTREVEL"
                   />
                   <button class="btn-hover">
@@ -162,7 +162,7 @@
               </div>
               <div class="portfolio_card">
                 <a href="#" class="portfolio_card_img">
-                  <img src="./img/portfolio/unitwrap.jpg" alt="UNIT" />
+                  <img src="./img/portfolio/unit-preview.jpg" alt="UNIT" />
                   <button class="btn-hover">
                     Смотреть проект
                   </button>
@@ -202,13 +202,13 @@
               </div>
 
               <div class="wrap-skills__item">
-                <div class="icon-img">
+                <div class="icon-img icon-img-modify">
                   <img src="./img/icon/icon-2.png" alt="icon" />
                 </div>
                 <div class="item-content">
                   <h3 class="item-title">
                     <span class="line-bottom line-bottom__modify2">
-                      Выполняю каждый этап
+                      ТЗ, смета и график работ
                     </span>
                   </h3>
                   <p class="item-text">
@@ -239,7 +239,7 @@
               </div>
 
               <div class="wrap-skills__item">
-                <div class="icon-img">
+                <div class="icon-img icon-img-modify">
                   <img src="./img/icon/icon-4.png" alt="icon" />
                 </div>
                 <div class="item-content">
@@ -276,6 +276,14 @@
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section class="contacts">
+        <div class="container">
+          <h2 class="section-titile">
+            <span class="line-bottom line-bottom__modify">Контакты</span>
+          </h2>
         </div>
       </section>
     </main>
