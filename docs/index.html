@@ -86,7 +86,7 @@
               соблюдением сроков и выполнением ТЗ.
             </p>
             <a href="#skills" class="btn-1">Познакомится</a>
-            <a href="#" class="btn-2">Контакты</a>
+            <a href="#contacts" class="btn-2">Контакты</a>
           </div>
           <div class="header-content__img">
             <img src="./img/header/coder.jpg" alt="" />
@@ -116,7 +116,7 @@
             </div>
             <div class="header-contacts">
               <h2 class="skill-title">На связи</h2>
-              <div class="skills-icon">
+              <div class="socials-icon">
                 <a href="#" class="social-icon icon-gh"
                   ><img src="./img/icon/github.png" alt="Гитхаб"
                 /></a>
@@ -130,7 +130,9 @@
                   ><img src="./img/icon/facebook.png" alt="Facebook"
                 /></a>
               </div>
-              <a href="#" class="skill-mail">namazov1994@yandex.ru</a>
+              <a href="mailto: namazov1994@yandex.ru" class="skill-mail"
+                >namazov1994@yandex.ru</a
+              >
             </div>
           </div>
         </div>
@@ -141,7 +143,7 @@
       <section class="section_portfolio" id="portfolio">
         <div class="container">
           <div class="portfolio-content__wrap">
-            <h2 class="section-titile">
+            <h2 class="section-titile section-titile-portfolio">
               <span class="line-bottom line-bottom__modify">Портфолио</span>
             </h2>
             <div class="portfolio-cards">
@@ -279,13 +281,101 @@
         </div>
       </section>
 
-      <section class="contacts">
+      <section class="contacts" id="contacts">
         <div class="container">
-          <h2 class="section-titile">
+          <h2 class="section-titile titile-contacts">
             <span class="line-bottom line-bottom__modify">Контакты</span>
           </h2>
+          <div class="content-wrap">
+            <div class="content-wrap__contact">
+              <div class="wrap__contact-desc">
+                <p>
+                  Если вы ищите специалиста по верстке сайтов, front-end
+                  разработчика в команду или для работы над проектом — напишите
+                  мне.
+                </p>
+              </div>
+              <ul class="wrap__contact-list">
+                <li class="contact__list-item">
+                  <div class="list__item-name">Email</div>
+                  <a
+                    href="mailto: namazov1994@yandex.ru"
+                    class="list__item-mail"
+                  >
+                    namazov1994@yandex.ru
+                  </a>
+                </li>
+                <li class="contact__list-item">
+                  <div class="list__item-name">VK</div>
+                  <a
+                    href="https://vk.com/elshanamazov" target="_blank"
+                    class="list__item-vk"
+                    >https://vk.com/elshanamazov</a
+                  >
+                </li>
+                <li class="contact__list-item">
+                  <div class="list__item-name">Телефон</div>
+                  <a href="tel: +79275599569" class="list__item-tel"
+                    >+79275599569</a
+                  >
+                </li>
+                <li class="contact__list-item">
+                  <div class="list__item-name">Адрес</div>
+                  <a href="#" class="list__item-address"
+                    >Россия, г. Астрахань</a
+                  >
+                </li>
+              </ul>
+              <div class="socials-icon socials-icon__contacts">
+                <a href="#" class="social-icon icon-gh"
+                  ><img src="./img/icon/github.png" alt="Гитхаб"
+                /></a>
+                <a href="#" class="social-icon icon-tg"
+                  ><img src="./img/icon/telegram.png" alt="Телеграм"
+                /></a>
+                <a href="#" class="social-icon icon-vk"
+                  ><img src="./img/icon/vk.png" alt="ВК"
+                /></a>
+                <a href="#" class="social-icon icon-fb"
+                  ><img src="./img/icon/facebook.png" alt="Facebook"
+                /></a>
+              </div>
+
+                
+              </div>
+            <div class="content-wrap__form">
+                  <form action="" class="contact-form">
+                    <div class="contact-form__item">
+                      <input type="text" class="form-field" name="email">
+                      <span class="fake-placeholder">Ваш email</span>
+                    </div>
+                    <div class="contact-form__item">
+                      <input type="text" class="form-field" name="theme">
+                      <span class="fake-placeholder">Тема письма</span>
+                    </div>
+                    <div class="contact-form__item">
+                      <textarea class="form-field" name="message" rows="3"></textarea>
+                      <span class="fake-placeholder">Сообщение</span>
+                    </div>
+                      <input type="submit" class="btn-1 btn-field" value="Отправить">
+                  </form>
+                </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-copy">&copy; 2020 &mdash; Намазов Эльшан</div>
+        <div class="footer-text">
+          <P>
+            Веб-разработчик из Астрахани, занимаюсь версткой и созданием сайтов. <br> Этот сайт сделал в рамках прохождения обучения по верстке на курсах от <a href="https://webcademy.ru/" target="_blank">WebCademy.ru</a>
+          </P>
+        </div>
+      </div>
+    </footer>
+    <script src="js/main.js"></script>
   </body>
 </html>
