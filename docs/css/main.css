@@ -152,6 +152,9 @@ button {
 .header-wrapper__nav .nav-item:hover:after {
   width: 111%;
 }
+.header-wrapper__nav .nav-item:focus {
+  border: 3px dotted #ea736d;
+}
 .icon-item {
   display: inline-block;
   margin-right: 20px;
@@ -675,12 +678,12 @@ button {
 .content-wrap__contact::before {
   content: "";
   position: absolute;
-  top: -5px;
+  top: 0;
   right: 0;
-  bottom: 0;
-  left: -338px;
+  bottom: -55px;
+  left: -210px;
   z-index: -1;
-  background-image: url(../img/contacts/bg-contacts.png);
+  background-image: url(../img/contacts/BG-contacts.png);
   background-repeat: no-repeat;
 }
 .titile-contacts {
@@ -691,13 +694,13 @@ button {
   font-size: 20px;
   color: #000000;
   line-height: 1.6;
-  margin-bottom: 50px;
+  margin-bottom: 35px;
 }
 .wrap__contact-list {
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 .contact__list-item {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 .list__item-name {
   display: inline-block;
@@ -747,9 +750,12 @@ button {
   font-weight: 400;
   line-height: 1.5;
 }
-.footer-text a {
+.footer-text .webcademy {
   color: #b0b0b0;
   border-bottom: 1px solid #b0b0b0;
+}
+.footer-text .webcademy:hover {
+  color: #ffffff;
 }
 .content-wrap__form {
   display: -webkit-box;
@@ -781,7 +787,6 @@ button {
   margin-bottom: 20px;
 }
 .fake-placeholder {
-  content: "";
   position: absolute;
   left: 5px;
   top: 0;
@@ -793,37 +798,54 @@ button {
   -o-transition: 0.3s ease;
   -moz-transition: 0.3s ease;
   transition: 0.3s ease;
+  line-height: 1.2;
 }
-.fake-placeholder:active {
+.fake-placeholder.active {
   color: #000000;
   font-size: 16px;
   -webkit-transition: 0.3s ease;
   -o-transition: 0.3s ease;
   -moz-transition: 0.3s ease;
   transition: 0.3s ease;
+  color: #ed9626;
+  top: -11px;
+  line-height: 1.2;
 }
 textarea,
 input {
   width: 100%;
-  display: inline-block;
+  display: block;
+  height: 80px;
   border: 0;
-  border-bottom: 1px solid #000;
-  padding-left: 5px;
-  padding-right: 5px;
+  border-bottom: 1px solid #eaeaea;
+  padding: 5px;
   font-family: "M PLUS 1p", sans-serif;
 }
 textarea:last-child,
 input:last-child {
   border-bottom: unset;
 }
+textarea {
+  resize: none;
+  padding: 5px;
+  height: 140px;
+}
 .form-field {
   font-size: 20px;
-  color: #bcbcbc;
+  color: #000000;
   font-weight: 700;
   line-height: 1.2;
+}
+.form-field:hover {
+  border-bottom: 1px solid #ea736d;
+}
+.form-field:focus {
+  border-bottom: 1px solid #ea736d;
 }
 .btn-field {
   margin-right: 0;
   font-size: 20px;
+  height: 64px;
+  width: auto;
 }
 /*# sourceMappingURL=main.css.map */
