@@ -11,16 +11,19 @@
     <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
+    <div id="overlay"></div>
     <header class="header">
       <div class="header-container">
         <div class="header-wrapper">
           <div class="header-wrapper__logo">
-            <a href="#">ЭН</a>
+            <a href="index.html">ЭН</a>
           </div>
           <navigation class="header-wrapper__nav">
-            <a href="#" class="nav-item">Главная</a>
-            <a href="#" class="nav-item">Работы</a>
-            <a href="#" class="nav-item">Контакты</a>
+            <div class="menu-wrapper">
+              <a href="index.html" class="nav-item">Главная</a>
+              <a href="#" class="nav-item">Работы</a>
+              <a href="#" class="nav-item">Контакты</a>
+            </div>
           </navigation>
           <div class="header-wrapper__icons">
             <a href="#" class="icon-item">
@@ -72,6 +75,14 @@
               </svg>
             </a>
           </div>
+
+          <!-- <div class="mail-mob">
+            <a href="">namazov1994@yandex.ru</a>
+          </div> -->
+          
+          <div class="toggle-menu">
+            <span></span>
+          </div>
         </div>
       </div>
       <div class="container">
@@ -85,7 +96,7 @@
               Верстальщик сайтов, веб-разработчик.Оперативная верстка. Работаю с
               соблюдением сроков и выполнением ТЗ.
             </p>
-            <a href="#skills" class="btn-1">Познакомится</a>
+            <a href="#skills" class="btn-1 btn-modify-header">Познакомится</a>
             <a href="#contacts" class="btn-2">Контакты</a>
           </div>
           <div class="header-content__img">

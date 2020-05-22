@@ -52,15 +52,46 @@ button {
   border: 0;
 }
 .container {
-  max-width: 1140px;
+  max-width: 500px;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  /* Для экранов с шириной от 768px и более. Планшеты (Tablets) */
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+}
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 1000px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 ::-moz-selection {
   background: #fbdc4d;
 }
 ::selection {
   background: #fbdc4d;
+}
+#overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+  display: none;
+}
+#overlay.active {
+  display: block;
 }
 .header {
   padding-top: 70px;
@@ -70,6 +101,14 @@ button {
   max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media only screen and (min-width: 1430px) {
+  .header-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 .header-wrapper {
   display: -webkit-box;
@@ -121,39 +160,159 @@ button {
 }
 .header-wrapper__nav {
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 700;
   line-height: 1.2;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 10;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-left: 40px;
+  padding-top: 80px;
+  width: 100%;
+  max-width: 400px;
+  -webkit-transform: translateX(100%);
+     -moz-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+       -o-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  transition: 0.5s ease;
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+}
+@media only screen and (min-width: 1200px) {
+  .header-wrapper__nav {
+    position: relative;
+    max-width: unset;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+       -moz-box-orient: horizontal;
+       -moz-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding-top: 0;
+    padding-left: 0;
+    width: auto;
+    background-color: unset;
+    -webkit-transform: none;
+       -moz-transform: none;
+        -ms-transform: none;
+         -o-transform: none;
+            transform: none;
+  }
 }
 .header-wrapper__nav a {
   color: #000000;
 }
+.header-wrapper__nav .menu-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 20px;
+  color: #000000;
+  font-weight: 700;
+  line-height: 1.1;
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+}
+@media only screen and (min-width: 1200px) {
+  .header-wrapper__nav .menu-wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+       -moz-box-orient: horizontal;
+       -moz-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
 .header-wrapper__nav .nav-item {
+  display: inline-block;
   position: relative;
   z-index: 2;
-  margin-right: 75px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #000;
+  /* Для экранов с шириной от 768px и более. Планшеты (Tablets) */
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+}
+.header-wrapper__nav .nav-item .nav-item a {
+  display: inline-block;
+}
+@media only screen and (min-width: 1200px) {
+  .header-wrapper__nav .nav-item {
+    margin-right: 75px;
+    border-bottom: unset;
+  }
 }
 .header-wrapper__nav .nav-item:last-child {
   margin-right: 0;
 }
 .header-wrapper__nav .nav-item::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  bottom: 5px;
-  left: -5px;
-  width: 0;
-  height: 5px;
-  background-color: #fbdc4d;
-  -webkit-transition: 0.5s ease;
-  -o-transition: 0.5s ease;
-  -moz-transition: 0.5s ease;
-  transition: 0.5s ease;
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
 }
-.header-wrapper__nav .nav-item:hover:after {
-  width: 111%;
+@media only screen and (min-width: 1200px) {
+  .header-wrapper__nav .nav-item::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    bottom: 5px;
+    left: -5px;
+    width: 0;
+    height: 5px;
+    background-color: #fbdc4d;
+    -webkit-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
+    -moz-transition: 0.5s ease;
+    transition: 0.5s ease;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .header-wrapper__nav .nav-item:hover:after {
+    width: 111%;
+  }
 }
 .header-wrapper__nav .nav-item:focus {
-  border: 3px dotted #ea736d;
+  outline: 3px dotted #ea736d;
+}
+.header-wrapper__nav.active {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.header-wrapper__icons {
+  display: none;
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+}
+@media only screen and (min-width: 1200px) {
+  .header-wrapper__icons {
+    display: block;
+  }
 }
 .icon-item {
   display: inline-block;
@@ -179,57 +338,239 @@ button {
 .modify-3 svg:hover {
   fill: #45668e;
 }
+.mail-mob {
+  font-size: 18px;
+  color: #039be5;
+  line-height: 1.2;
+  border-bottom: 1px solid #039be5;
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+}
+.mail-mob a {
+  color: #039be5;
+}
+@media only screen and (min-width: 1200px) {
+  .mail-mob {
+    display: none;
+  }
+}
+.toggle-menu {
+  position: relative;
+  z-index: 15;
+  cursor: pointer;
+  height: 40px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* Для экранов с шириной от 768px и более. Планшеты (Tablets) */
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+}
+@media only screen and (min-width: 1200px) {
+  .toggle-menu {
+    display: none;
+  }
+}
+.toggle-menu.active span {
+  background-color: transparent;
+}
+.toggle-menu.active span::before {
+  top: 0;
+  -webkit-transform: rotate(45deg);
+     -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+       -o-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.toggle-menu.active span::after {
+  bottom: 0;
+  -webkit-transform: rotate(-45deg);
+     -moz-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+       -o-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.toggle-menu span {
+  width: 40px;
+  height: 2px;
+  background-color: #000;
+  display: block;
+  position: relative;
+}
+.toggle-menu span:before,
+.toggle-menu span :after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 3px;
+  background-color: #000;
+  left: 0;
+}
+.toggle-menu span:before {
+  top: -10px;
+  height: 3px;
+}
+.toggle-menu span:after {
+  bottom: -10px;
+  height: 3px;
+}
 .header-content__wrapper {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-     -moz-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -webkit-flex-direction: column-reverse;
+     -moz-box-orient: vertical;
+     -moz-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  /* Для экранов с шириной от 768px и более. Планшеты (Tablets) */
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+}
+@media only screen and (min-width: 768px) {
+  .header-content__wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+       -moz-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+       -moz-box-orient: horizontal;
+       -moz-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
 }
 .header-content {
   width: 49%;
   max-width: 560px;
   z-index: 2;
+  /* Для экранов с шириной от 768px и более. Планшеты (Tablets) */
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+}
+@media only screen and (min-width: 768px) {
+  .header-content {
+    width: 49%;
+  }
 }
 .header-content__img {
-  max-width: 460px;
-  width: 49%;
+  width: 100%;
+  max-width: 290px;
+  margin-bottom: 50px;
+  /* Для экранов с шириной от 768px и более. Планшеты (Tablets) */
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+}
+@media only screen and (min-width: 768px) {
+  .header-content__img {
+    margin-bottom: unset;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .header-content__img {
+    max-width: 460px;
+    width: 49%;
+  }
 }
 .header-content__img img {
-  height: 100%;
+  max-width: 290px;
+  height: 290px;
+  /* Для экранов с шириной от 768px и более. Планшеты (Tablets) */
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+}
+@media only screen and (min-width: 1200px) {
+  .header-content__img img {
+    max-width: unset;
+    height: 100%;
+  }
 }
 .header-title {
-  font-size: 90px;
+  font-size: 42px;
   color: #000000;
   font-weight: 800;
   line-height: 1.2;
-  margin-bottom: 15px;
+  margin-bottom: 35px;
+  /* Для экранов с шириной от 768px и более. Планшеты (Tablets) */
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+}
+@media only screen and (min-width: 768px) {
+  .header-title {
+    font-size: 52px;
+    margin-bottom: 30px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .header-title {
+    font-size: 90px;
+    margin-bottom: 15px;
+  }
 }
 .line-bottom {
   position: relative;
-  z-index: 2;
+  z-index: 5;
 }
 .line-bottom::after {
   height: 12px;
   position: absolute;
   z-index: -1;
   right: -5px;
-  bottom: 23px;
+  bottom: 10px;
   left: -5px;
   content: "";
   background-color: #fbdc4d;
+  /* Для экранов с шириной от 768px и более. Планшеты (Tablets) */
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+}
+@media only screen and (min-width: 768px) {
+  .line-bottom::after {
+    bottom: 13px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .line-bottom::after {
+    bottom: 23px;
+  }
 }
 .header-desc {
-  font-size: 24px;
+  font-size: 18px;
   color: #393f47;
   text-shadow: 0px 3px 42.32px rgba(255, 255, 255, 0.004);
-  font-weight: medium;
-  margin-bottom: 25px;
+  font-weight: 500;
+  margin-bottom: unset;
+  z-index: 5;
+  min-width: 290px;
+  /* Для экранов с шириной от 768px и более. Планшеты (Tablets) */
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+}
+@media only screen and (min-width: 768px) {
+  .header-desc {
+    font-size: 18px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .header-desc {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
 }
 .btn-1 {
   display: inline-block;
@@ -256,8 +597,17 @@ button {
 .btn-1:active {
   background-color: #e1bc10;
 }
+.btn-modify-header {
+  display: none;
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+}
+@media only screen and (min-width: 1200px) {
+  .btn-modify-header {
+    display: inline-block;
+  }
+}
 .btn-2 {
-  display: inline-block;
+  display: none;
   width: 190px;
   padding: 15px;
   -webkit-border-radius: 30px;
@@ -276,6 +626,12 @@ button {
   -o-transition: 0.5s ease;
   -moz-transition: 0.5s ease;
   transition: 0.5s ease;
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+}
+@media only screen and (min-width: 1200px) {
+  .btn-2 {
+    display: inline-block;
+  }
 }
 .btn-2:hover {
   opacity: 0.5;
@@ -285,10 +641,22 @@ button {
 }
 .header-background {
   max-width: 1600px;
-  margin-top: -100px;
+  margin-top: -40px;
   margin-left: auto;
   margin-right: auto;
-  z-index: -1;
+  z-index: -2;
+  /* Для экранов с шириной от 768px и более. Планшеты (Tablets) */
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+}
+@media only screen and (min-width: 768px) {
+  .header-background {
+    margin-top: -70px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .header-background {
+    margin-top: -100px;
+  }
 }
 .header-skills {
   padding-top: 70px;
@@ -300,52 +668,138 @@ button {
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-     -moz-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  /* Для экранов с шириной от 768px и более. Планшеты (Tablets) */
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+}
+@media only screen and (min-width: 768px) {
+  .header-skills__wrapper {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+       -moz-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+       -moz-box-orient: horizontal;
+       -moz-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .header-skills__wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 .header_skill {
-  width: 51%;
-  max-width: 600px;
+  width: 100%;
+  min-width: 290px;
+  /* Для экранов с шириной от 768px и более. Планшеты (Tablets) */
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+}
+@media only screen and (min-width: 768px) {
+  .header_skill {
+    max-width: 340px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .header_skill {
+    width: 51%;
+    max-width: 600px;
+  }
 }
 .skill-title {
-  font-size: 40px;
+  font-size: 30px;
   color: #000000;
   font-weight: bold;
   line-height: 1.2;
   margin-bottom: 35px;
+  /* Для экранов с шириной от 768px и более. Планшеты (Tablets) */
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+}
+@media only screen and (min-width: 768px) {
+  .skill-title {
+    font-size: 32px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .skill-title {
+    font-size: 40px;
+  }
 }
 .skill-list {
   margin-bottom: 40px;
 }
 .list-item {
-  font-size: 24px;
+  font-size: 18px;
   color: #000000;
   line-height: 1.2;
   margin-bottom: 10px;
   position: relative;
-  padding-left: 30px;
+  /* Для экранов с шириной от 768px и более. Планшеты (Tablets) */
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+}
+@media only screen and (min-width: 768px) {
+  .list-item {
+    font-size: 20px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .list-item {
+    padding-left: 30px;
+    font-size: 24px;
+  }
 }
 .list-item:last-child {
   margin-bottom: 0;
 }
 .list-item::before {
-  content: "\2014";
-  position: absolute;
-  left: 0px;
-  top: 0;
+  display: none;
+  /* Для экранов с шириной от 768px и более. Планшеты (Tablets) */
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+}
+@media only screen and (min-width: 1200px) {
+  .list-item::before {
+    display: block;
+    content: "\2014";
+    position: absolute;
+    left: 0px;
+    top: 0;
+  }
 }
 .btn-modify {
   padding: 20px 38px;
   margin-right: 0;
+  display: none;
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+}
+@media only screen and (min-width: 1200px) {
+  .btn-modify {
+    display: inline-block;
+  }
 }
 .header-contacts {
   width: 49%;
   max-width: 360px;
 }
 .socials-icon {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
   margin-bottom: 30px;
 }
 .social-icon {
@@ -364,7 +818,7 @@ button {
 }
 .skill-mail {
   display: inline-block;
-  font-size: 24px;
+  font-size: 18px;
   color: #000000;
   border-bottom: 1px solid #000000;
   line-height: 1.2;
@@ -372,6 +826,18 @@ button {
   -o-transition: 0.4s ease;
   -moz-transition: 0.4s ease;
   transition: 0.4s ease;
+  /* Для экранов с шириной от 768px и более. Планшеты (Tablets) */
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+}
+@media only screen and (min-width: 768px) {
+  .skill-mail {
+    font-size: 20px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .skill-mail {
+    font-size: 24px;
+  }
 }
 .skill-mail:hover {
   color: #039be5;
@@ -681,14 +1147,14 @@ button {
   top: 0;
   right: 0;
   bottom: -55px;
-  left: -210px;
+  left: -345px;
   z-index: -1;
   background-image: url(../img/contacts/BG-contacts.png);
   background-repeat: no-repeat;
 }
 .titile-contacts {
   text-align: center;
-  margin-bottom: 75px;
+  margin-bottom: 90px;
 }
 .wrap__contact-desc {
   font-size: 20px;

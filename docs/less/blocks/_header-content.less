@@ -1,51 +1,130 @@
 .header-content__wrapper {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column-reverse;
+
+  /* Для экранов с шириной от 768px и более. Планшеты (Tablets) */
+  @media only screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+  @media only screen and (min-width: 1200px) {
+  }
 }
 .header-content {
   width: 49%;
   max-width: 560px;
   z-index: 2;
+
+  /* Для экранов с шириной от 768px и более. Планшеты (Tablets) */
+  @media only screen and (min-width: 768px) {
+    width: 49%;
+  }
+
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+  @media only screen and (min-width: 1200px) {
+  }
 }
+
 .header-content__img {
-  max-width: 460px;
-  width: 49%;
+  width: 100%;
+  max-width: 290px;
+  margin-bottom: 50px;
+
+  /* Для экранов с шириной от 768px и более. Планшеты (Tablets) */
+  @media only screen and (min-width: 768px) {
+    margin-bottom: unset;
+  }
+
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+  @media only screen and (min-width: 1200px) {
+    max-width: 460px;
+    width: 49%;
+  }
 
   & img {
-    height: 100%;
+    max-width: 290px;
+    height: 290px;
+
+    /* Для экранов с шириной от 768px и более. Планшеты (Tablets) */
+    @media only screen and (min-width: 768px) {
+    }
+
+    /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+    @media only screen and (min-width: 1200px) {
+      max-width: unset;
+      height: 100%;
+    }
   }
 }
 
 .header-title {
-  font-size: 90px;
+  font-size: 42px;
   color: rgb(0, 0, 0);
   font-weight: 800;
   line-height: 1.2;
-  margin-bottom: 15px;
+  margin-bottom: 35px;
+
+  /* Для экранов с шириной от 768px и более. Планшеты (Tablets) */
+  @media only screen and (min-width: 768px) {
+    font-size: 52px;
+    margin-bottom: 30px;
+  }
+
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+  @media only screen and (min-width: 1200px) {
+    font-size: 90px;
+    margin-bottom: 15px;
+  }
 }
 
 .line-bottom {
   position: relative;
-  z-index: 2;
+  z-index: 5;
 
   &::after {
     height: 12px;
     position: absolute;
     z-index: -1;
     right: -5px;
-    bottom: 23px;
+    bottom: 10px;
     left: -5px;
     content: "";
     background-color: #fbdc4d;
+
+    /* Для экранов с шириной от 768px и более. Планшеты (Tablets) */
+    @media only screen and (min-width: 768px) {
+      bottom: 13px;
+    }
+
+    /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+    @media only screen and (min-width: 1200px) {
+      bottom: 23px;
+    }
   }
 }
 
 .header-desc {
-  font-size: 24px;
+  font-size: 18px;
   color: rgb(57, 63, 71);
   text-shadow: 0px 3px 42.32px rgba(255, 255, 255, 0.004);
-  font-weight: medium;
-  margin-bottom: 25px;
+  font-weight: 500;
+  margin-bottom: unset;
+  z-index: 5;
+  min-width: 290px;
+
+  /* Для экранов с шириной от 768px и более. Планшеты (Tablets) */
+  @media only screen and (min-width: 768px) {
+    font-size: 18px;
+  }
+
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+  @media only screen and (min-width: 1200px) {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
 }
 
 .btn-1 {
@@ -71,8 +150,17 @@
   }
 }
 
+.btn-modify-header {
+  display: none;
+
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+  @media only screen and (min-width: 1200px) {
+    display: inline-block;
+  }
+}
+
 .btn-2 {
-  display: inline-block;
+  display: none;
   width: 190px;
   padding: 15px;
   border-radius: 30px;
@@ -88,6 +176,11 @@
   text-align: center;
   transition: 0.5s ease;
 
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+  @media only screen and (min-width: 1200px) {
+    display: inline-block;
+  }
+
   &:hover {
     opacity: 0.5;
   }
@@ -99,8 +192,18 @@
 
 .header-background {
   max-width: 1600px;
-  margin-top: -100px;
+  margin-top: -40px;
   margin-left: auto;
   margin-right: auto;
-  z-index: -1;
+  z-index: -2;
+
+  /* Для экранов с шириной от 768px и более. Планшеты (Tablets) */
+  @media only screen and (min-width: 768px) {
+    margin-top: -70px;
+  }
+
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+  @media only screen and (min-width: 1200px) {
+    margin-top: -100px;
+  }
 }

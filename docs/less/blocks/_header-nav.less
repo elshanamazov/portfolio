@@ -2,11 +2,20 @@
   padding-top: 70px;
   padding-bottom: 240px;
 }
+
 .header-container {
   max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @media only screen and (min-width: 1430px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
+
 .header-wrapper {
   display: flex;
   justify-content: space-between;
@@ -42,45 +51,117 @@
 
 .header-wrapper__nav {
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 700;
   line-height: 1.2;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+  padding-left: 40px;
+  padding-top: 80px;
+  width: 100%;
+  max-width: 400px;
+  transform: translateX(100%);
+  transition: 0.5s ease;
+
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+  @media only screen and (min-width: 1200px) {
+    position: relative;
+    max-width: unset;
+    flex-direction: row;
+    padding-top: 0;
+    padding-left: 0;
+    width: auto;
+    background-color: unset;
+    transform: none;
+  }
 
   & a {
     color: rgb(0, 0, 0);
   }
 
+  & .menu-wrapper {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+    line-height: 1.1;
+
+    /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+    @media only screen and (min-width: 1200px) {
+      flex-direction: row;
+    }
+  }
+
   & .nav-item {
+    display: inline-block;
     position: relative;
     z-index: 2;
-    margin-right: 75px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #000;
+
+    & .nav-item a {
+      display: inline-block;
+    }
+
+    /* Для экранов с шириной от 768px и более. Планшеты (Tablets) */
+    @media only screen and (min-width: 768px) {
+    }
+
+    /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+    @media only screen and (min-width: 1200px) {
+      margin-right: 75px;
+      border-bottom: unset;
+    }
 
     &:last-child {
       margin-right: 0;
     }
 
     &::after {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      bottom: 5px;
-      left: -5px;
-      width: 0;
-      height: 5px;
-      background-color: #fbdc4d;
-      transition: 0.5s ease;
+      /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+      @media only screen and (min-width: 1200px) {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        bottom: 5px;
+        left: -5px;
+        width: 0;
+        height: 5px;
+        background-color: #fbdc4d;
+        transition: 0.5s ease;
+      }
     }
 
     &:hover:after {
-      width: 111%;
+      @media only screen and (min-width: 1200px) {
+        width: 111%;
+      }
     }
 
     &:focus {
-      border: 3px dotted #ea736d;
+      outline: 3px dotted #ea736d;
     }
   }
 }
 
+.header-wrapper__nav.active {
+  display: flex;
+}
+
 .header-wrapper__icons {
+  display: none;
+
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+  @media only screen and (min-width: 1200px) {
+    display: block;
+  }
 }
 
 .icon-item {
@@ -108,4 +189,80 @@
 
 .modify-3 svg:hover {
   fill: #45668e;
+}
+
+.mail-mob {
+  font-size: 18px;
+  color: rgb(3, 155, 229);
+  line-height: 1.2;
+  border-bottom: 1px solid rgb(3, 155, 229);
+  & a {
+    color: rgb(3, 155, 229);
+  }
+
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+  @media only screen and (min-width: 1200px) {
+    display: none;
+  }
+}
+
+.toggle-menu {
+  position: relative;
+  z-index: 15;
+  cursor: pointer;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Для экранов с шириной от 768px и более. Планшеты (Tablets) */
+  @media only screen and (min-width: 768px) {
+  }
+
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+  @media only screen and (min-width: 1200px) {
+    display: none;
+  }
+}
+
+.toggle-menu.active {
+  span {
+    background-color: transparent;
+    &::before {
+      top: 0;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      bottom: 0;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.toggle-menu span {
+  width: 40px;
+  height: 2px;
+  background-color: #000;
+  display: block;
+  position: relative;
+
+  &:before,
+  :after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 3px;
+    background-color: #000;
+    left: 0;
+  }
+
+  &:before {
+    top: -10px;
+    height: 3px;
+  }
+  &:after {
+    bottom: -10px;
+    height: 3px;
+  }
 }
