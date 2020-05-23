@@ -1,43 +1,122 @@
 .section_portfolio {
-  padding-top: 110px;
-  padding-bottom: 130px;
+  padding-top: 60px;
+  padding-bottom: 90px;
   background-color: rgb(244, 248, 249);
+
+  /* Tablets */
+  @media only screen and (min-width: 768px) {
+    padding-top: 80px;
+    padding-bottom: 75px;
+  }
+
+  /* Large Devices, Wide Screens */
+  @media only screen and (min-width: 1200px) {
+    padding-top: 110px;
+    padding-bottom: 130px;
+  }
 }
 
 .section-titile {
-  font-size: 64px;
+  font-size: 42px;
   color: rgb(0, 0, 0);
   font-weight: bold;
   line-height: 1.2;
-  margin-bottom: 130px;
+
+  /* Tablets */
+  @media only screen and (min-width: 768px) {
+    font-size: 52px;
+  }
+
+  /* Large Devices, Wide Screens */
+  @media only screen and (min-width: 1200px) {
+    font-size: 64px;
+  }
 
   &.section-titile-portfolio {
+    margin-bottom: 40px;
     text-align: unset;
+    /* Tablets */
+    @media only screen and (min-width: 768px) {
+      margin-bottom: 60px;
+    }
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (min-width: 1200px) {
+      margin-bottom: 130px;
+    }
   }
 }
 
 .line-bottom__modify {
   &::after {
-    bottom: 16px;
+    bottom: 9px;
+    /* Tablets */
+    @media only screen and (min-width: 768px) {
+      bottom: 12px;
+    }
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (min-width: 1200px) {
+      bottom: 16px;
+    }
   }
 }
 
 .portfolio-cards {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+
+  /* Tablets */
+  @media only screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  /* Large Devices, Wide Screens */
+  @media only screen and (min-width: 1200px) {
+  }
 }
 
 .portfolio_card {
-  width: 49%;
-  max-width: 555px;
+  width: 100%;
+  min-width: 290px;
+  margin-bottom: 40px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Tablets */
+  @media only screen and (min-width: 768px) {
+    width: 49%;
+    min-width: 340px;
+    margin-bottom: 0;
+  }
+
+  /* Large Devices, Wide Screens */
+  @media only screen and (min-width: 1200px) {
+    width: 49%;
+    max-width: 555px;
+  }
 
   & a {
     color: rgb(0, 0, 0);
     display: inline-block;
-    font-size: 32px;
     font-weight: bold;
+    font-size: 22px;
     line-height: 1.2;
     transition: all 0.5s ease;
+
+    /* Tablets */
+    @media only screen and (min-width: 768px) {
+      font-size: 24px;
+    }
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (min-width: 1200px) {
+      font-size: 32px;
+    }
   }
 
   & .portfolio_card_img {
@@ -108,7 +187,17 @@
 }
 
 .card-text {
-  font-size: 20px;
+  font-size: 16px;
   color: #6d6b6b;
   line-height: 1.2;
+
+  /* Tablets */
+  @media only screen and (min-width: 768px) {
+    font-size: 18px;
+  }
+
+  /* Large Devices, Wide Screens */
+  @media only screen and (min-width: 1200px) {
+    font-size: 20px;
+  }
 }

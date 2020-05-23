@@ -1,6 +1,16 @@
 .header {
   padding-top: 70px;
-  padding-bottom: 240px;
+  padding-bottom: 100px;
+
+  /* Tablets */
+  @media only screen and (min-width: 768px) {
+    padding-bottom: 90px;
+  }
+
+  /* Large Devices, Wide Screens */
+  @media only screen and (min-width: 1200px) {
+    padding-bottom: 240px;
+  }
 }
 
 .header-container {
@@ -20,8 +30,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 143px;
+  margin-bottom: 40px;
+
+  /* Tablets */
+  @media only screen and (min-width: 768px) {
+    margin-bottom: 80px;
+  }
+
+  /* Large Devices, Wide Screens */
+  @media only screen and (min-width: 1200px) {
+    margin-bottom: 143px;
+  }
 }
+
 .header-wrapper__logo {
   position: relative;
   font-size: 42px;
@@ -63,7 +84,7 @@
   display: flex;
   flex-direction: column;
   padding-left: 40px;
-  padding-top: 80px;
+  padding-top: 160px;
   width: 100%;
   max-width: 400px;
   transform: translateX(100%);
@@ -92,6 +113,7 @@
     color: rgb(0, 0, 0);
     font-weight: 700;
     line-height: 1.1;
+    margin-bottom: 35px;
 
     /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
     @media only screen and (min-width: 1200px) {
@@ -105,6 +127,7 @@
     z-index: 2;
     margin-bottom: 10px;
     border-bottom: 1px solid #000;
+    width: fit-content;
 
     & .nav-item a {
       display: inline-block;
@@ -153,6 +176,7 @@
 
 .header-wrapper__nav.active {
   display: flex;
+  transform: translateX(0);
 }
 
 .header-wrapper__icons {
@@ -241,28 +265,44 @@
 }
 
 .toggle-menu span {
-  width: 40px;
-  height: 2px;
   background-color: #000;
   display: block;
   position: relative;
+  width: 40px;
+  height: 3px;
+  margin-right: 10px;
 
-  &:before,
-  :after {
+  &:before {
     content: "";
     position: absolute;
     width: 40px;
     height: 3px;
     background-color: #000;
     left: 0;
+    top: -10px;
+    transition: 0.5s ease;
   }
 
-  &:before {
-    top: -10px;
-    height: 3px;
-  }
   &:after {
-    bottom: -10px;
+    content: "";
+    position: absolute;
+    width: 40px;
     height: 3px;
+    background-color: #000;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s ease;
+  }
+}
+
+.mob-contacts {
+  display: block;
+  /* Tablets */
+  @media only screen and (min-width: 768px) {
+  }
+
+  /* Large Devices, Wide Screens */
+  @media only screen and (min-width: 1200px) {
+    display: none;
   }
 }
