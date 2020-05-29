@@ -37,8 +37,19 @@
   height: 74px;
   flex-shrink: 0;
   position: absolute;
-  right: -36px;
+  left: -36px;
   top: 0;
+  z-index: 2;
+
+  /* Для экранов с шириной от 768px и более. Планшеты (Tablets) */
+  @media only screen and (min-width: 768px) {
+    right: -36px;
+    left: unset;
+  }
+
+  /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+  @media only screen and (min-width: 1200px) {
+  }
 
   &.icon-img-modify {
     left: -36px;
@@ -67,9 +78,17 @@
     width: 4px;
     height: 90px;
     top: -120px;
-    right: -2px;
     bottom: 0;
     background-color: rgb(225, 238, 244);
+
+    /* Для экранов с шириной от 768px и более. Планшеты (Tablets) */
+    @media only screen and (min-width: 768px) {
+      right: -2px;
+    }
+
+    /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+    @media only screen and (min-width: 1200px) {
+    }
   }
 
   &:nth-of-type(even):before {
@@ -109,12 +128,13 @@
 
 .item-content {
   position: relative;
-  width: 426px;
+  min-width: 190px;
   margin-left: 60px;
   margin-bottom: 50px;
 
   /* Для экранов с шириной от 768px и более. Планшеты (Tablets) */
   @media only screen and (min-width: 768px) {
+    width: 426px;
     margin-right: 0;
     margin-bottom: 0;
   }
@@ -135,7 +155,7 @@
 
   /* Для экранов с шириной от 768px и более. Планшеты (Tablets) */
   @media only screen and (min-width: 768px) {
-    font-size: 24px;
+    font-size: 25px;
   }
 
   /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
@@ -146,8 +166,20 @@
 
 .line-bottom__modify2 {
   &::after {
-    height: 8px;
-    bottom: 5px;
+    height: 7px;
+    bottom: 3px;
+    display: none;
+
+    /* Для экранов с шириной от 768px и более. Планшеты (Tablets) */
+    @media only screen and (min-width: 768px) {
+      height: 8px;
+      bottom: 5px;
+    }
+
+    /* Для экранов с шириной от 1200px и более. Десктоп - настольный компбютер. Desktop  */
+    @media only screen and (min-width: 1200px) {
+      display: block;
+    }
   }
 
   &:hover:after {
@@ -161,7 +193,7 @@
   color: rgb(0, 0, 0);
   line-height: 1.2;
   margin-bottom: 10px;
-  min-width: 180px;
+  min-width: 190px;
 
   /* Для экранов с шириной от 768px и более. Планшеты (Tablets) */
   @media only screen and (min-width: 768px) {
